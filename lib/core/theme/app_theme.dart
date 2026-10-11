@@ -11,7 +11,7 @@ class AppTheme {
       brightness: brightness,
       scaffoldBackgroundColor: colors.background,
       canvasColor: colors.background,
-      fontFamily: 'Gochi Hand',
+      fontFamily: 'Patrick Hand',
       splashFactory: NoSplash.splashFactory,
       highlightColor: Colors.transparent,
       hoverColor: Colors.transparent,

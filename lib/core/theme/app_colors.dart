@@ -44,7 +44,7 @@ class AppColors extends ThemeExtension<AppColors> {
     textSecondary: Color(0xFF66635D),
     textLabel: Color(0xFF58554F),
     textLink: Color(0xFF302D28),
-    deactivatedTextLink: Color(0xFF888888),
+    deactivatedTextLink: Color(0xFF6B6B6B),
     borderStrong: Color(0xFFD8D4CD),
     borderSubtle: Color(0xFFE7E4E0),
     danger: Color(0xFF8C3019),
@@ -129,6 +129,5 @@ class AppColors extends ThemeExtension<AppColors> {
 }
 
 extension AppColorsContext on BuildContext {
-  /// Kurzform für `Theme.of(context).extension<AppColors>()!`.
   AppColors get colors => Theme.of(this).extension<AppColors>()!;
 }

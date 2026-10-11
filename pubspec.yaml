@@ -44,9 +44,15 @@ flutter:
     # Nur für Tests ohne Server: gebündelte Wörterbücher.
     - assets/dev/
   fonts:
-     - family: Gochi Hand
-       fonts:
-         - asset: assets/fonts/gochi-hand/GochiHand-Regular.ttf
+    - family: Caveat Brush
+      fonts:
+        - asset: assets/fonts/Caveat_Brush/CaveatBrush-Regular.ttf
+    - family: Patrick Hand
+      fonts:
+        - asset: assets/fonts/Patrick_Hand/PatrickHand-Regular.ttf
+    - family: Charis SIL
+      fonts:
+        - asset: assets/fonts/Charis_SIL/CharisSIL-Regular.ttf
 
 # Run the icon generator for dark and light mode png icon generation
 # with `make all` in /assets/icon.

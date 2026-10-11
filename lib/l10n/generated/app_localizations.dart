@@ -112,6 +112,12 @@ abstract class AppLocalizations {
   /// **'Wort suchen …'**
   String get searchHint;
 
+  /// No description provided for @searchEmptyPrompt.
+  ///
+  /// In de, this message translates to:
+  /// **'Suche nach einem Wort...'**
+  String get searchEmptyPrompt;
+
   /// No description provided for @dictionaryLoadError.
   ///
   /// In de, this message translates to:

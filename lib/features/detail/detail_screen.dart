@@ -135,10 +135,10 @@ class _EntryView extends StatelessWidget {
               if (entry.ipa != null)
                 Text(
                   '[${entry.ipa}]',
-                  style: AppTypography.body.copyWith(color: colors.textPrimary),
+                  style: AppTypography.ipa,
                 ),
               if (entry.audioUrl != null) ...[
-                const SizedBox(width: 8),
+                const SizedBox(width: 20),
                 SpeakerButton(audioUrl: entry.audioUrl!),
               ],
             ],
@@ -153,7 +153,6 @@ class _EntryView extends StatelessWidget {
               ),
             ),
           ),
-        const SizedBox(height: 24),
         if (entry.senses.isNotEmpty)
           Semantics(
             header: true,

@@ -3,6 +3,7 @@
   "appTitle": "Taschenwörterbuch",
   "searchTitle": "Wörterbuch",
   "searchHint": "Wort suchen …",
+  "searchEmptyPrompt": "Suche nach einem Wort...",
   "dictionaryLoadError": "Wörterbuch leider nicht ladbar: {error}",
   "@dictionaryLoadError": {
     "placeholders": { "error": { "type": "Object" } }

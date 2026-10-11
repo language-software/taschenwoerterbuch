@@ -54,7 +54,7 @@ class _SketchTextFieldState extends State<SketchTextField> {
     final colors = context.colors;
     final hasError = widget.errorText != null;
     final focused = _focusNode.hasFocus;
-    final textStyle = Theme.of(context).textTheme.titleMedium?.copyWith(
+    final textStyle = AppTypography.body.copyWith(
       color: widget.enabled ? colors.textPrimary : colors.deactivatedTextLink,
     );
 
@@ -76,7 +76,7 @@ class _SketchTextFieldState extends State<SketchTextField> {
         CustomPaint(
           painter: SketchPainter(
             seed: (widget.label ?? widget.hint).hashCode,
-            paper: widget.enabled ? colors.paper : colors.paperDisabled,
+            paper: Colors.transparent,
             scribble: focused && widget.enabled ? colors.scribble : null,
             stroke: hasError ? colors.danger : colors.sketchStroke,
           ),
@@ -103,7 +103,7 @@ class _SketchTextFieldState extends State<SketchTextField> {
                     disabledBorder: InputBorder.none,
                     errorBorder: InputBorder.none,
                     hintText: widget.hint,
-                    hintStyle: textStyle?.copyWith(
+                    hintStyle: textStyle.copyWith(
                       color: colors.deactivatedTextLink,
                     ),
                     contentPadding: EdgeInsets.zero,

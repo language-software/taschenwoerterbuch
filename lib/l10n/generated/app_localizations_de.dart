@@ -19,6 +19,9 @@ class AppLocalizationsDe extends AppLocalizations {
   String get searchHint => 'Wort suchen …';
 
   @override
+  String get searchEmptyPrompt => 'Suche nach einem Wort...';
+
+  @override
   String dictionaryLoadError(Object error) {
     return 'Wörterbuch leider nicht ladbar: $error';
   }

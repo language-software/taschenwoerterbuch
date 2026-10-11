@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:taschenwoerterbuch/core/theme/app_colors.dart';
+import 'package:taschenwoerterbuch/core/theme/app_typography.dart';
 import 'package:taschenwoerterbuch/shared/widgets/sketch_painter.dart';
 
 class SketchNavItem {
@@ -94,8 +95,7 @@ class _NavBarItem extends StatelessWidget {
                 const SizedBox(height: 2),
                 Text(
                   item.label,
-                  style: Theme.of(context).textTheme.labelLarge
-                      ?.copyWith(color: color),
+                  style: AppTypography.body,
                 ),
               ],
             ),

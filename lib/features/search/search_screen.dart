@@ -2,14 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:taschenwoerterbuch/core/theme/app_colors.dart';
 import 'package:taschenwoerterbuch/core/theme/app_typography.dart';
-import 'package:taschenwoerterbuch/data/models/entry.dart';
 import 'package:taschenwoerterbuch/data/models/lang_pair.dart';
 import 'package:taschenwoerterbuch/features/detail/detail_screen.dart';
 import 'package:taschenwoerterbuch/features/search/search_controller.dart';
 import 'package:taschenwoerterbuch/features/search/widgets/direction_switch.dart';
 import 'package:taschenwoerterbuch/features/search/widgets/search_bar_bottom.dart';
+import 'package:taschenwoerterbuch/features/search/widgets/search_row.dart';
 import 'package:taschenwoerterbuch/l10n/generated/app_localizations.dart';
 
+import '../../shared/widgets/sketch_divider.dart';
 import '../../shared/widgets/sketch_progress_indicator.dart';
 
 class SearchScreen extends ConsumerStatefulWidget {
@@ -39,11 +40,6 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
     setState(() => _pair = _pair.reversed);
     ref.read(searchControllerProvider.notifier).setPair(_pair);
     _onQueryChanged();
-  }
-
-  String _hitLabel(AppLocalizations l10n, SearchHit hit) {
-    final labels = {for (final e in hit.entries) ?posLabel(l10n, e.pos)};
-    return labels.isEmpty ? hit.term : '${hit.term} (${labels.join(', ')})';
   }
 
   void _openDetail(SearchHit hit) {
@@ -87,22 +83,26 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
               ),
               Expanded(
                 child: hits.when(
-                  data: (list) => ListView.builder(
-                    itemCount: list.length,
-                    itemBuilder: (context, i) {
-                      final h = list[i];
-                      return Semantics(
-                        button: true,
-                        child: GestureDetector(
-                          behavior: HitTestBehavior.opaque,
-                          onTap: () => _openDetail(h),
-                          child: ConstrainedBox(
-                            constraints: const BoxConstraints(minHeight: 44),
-                            child: Align(
-                              alignment: Alignment.centerLeft,
-                              child: Text(_hitLabel(l10n, h)),
+                  data: (list) => ValueListenableBuilder(
+                    valueListenable: _searchTextController,
+                    builder: (context, value, _) {
+                      if (value.text.trim().isEmpty) {
+                        return Center(
+                          child: Text(
+                            l10n.searchEmptyPrompt,
+                            style: AppTypography.body.copyWith(
+                              color: context.colors.textSecondary,
                             ),
                           ),
+                        );
+                      }
+                      return ListView.separated(
+                        itemCount: list.length,
+                        separatorBuilder: (context, i) =>
+                            SketchDivider(seed: i + 1),
+                        itemBuilder: (context, i) => SearchRow(
+                          hit: list[i],
+                          onTap: () => _openDetail(list[i]),
                         ),
                       );
                     },

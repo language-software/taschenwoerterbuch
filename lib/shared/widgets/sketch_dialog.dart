@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:taschenwoerterbuch/core/theme/app_colors.dart';
+import 'package:taschenwoerterbuch/core/theme/app_typography.dart';
 import 'package:taschenwoerterbuch/shared/widgets/sketch_painter.dart';
 
 class SketchDialog extends StatelessWidget {
@@ -18,7 +19,7 @@ class SketchDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final colors = context.colors;
-    final textTheme = Theme.of(context).textTheme;
+    final textTheme = AppTypography.body;
 
     return Dialog(
       backgroundColor: Colors.transparent,
@@ -41,7 +42,7 @@ class SketchDialog extends StatelessWidget {
                 header: true,
                 child: Text(
                   title,
-                  style: textTheme.headlineSmall?.copyWith(
+                  style: textTheme.copyWith(
                     color: colors.textPrimary,
                   ),
                 ),
@@ -49,7 +50,7 @@ class SketchDialog extends StatelessWidget {
               if (content != null) ...[
                 const SizedBox(height: 12),
                 DefaultTextStyle.merge(
-                  style: textTheme.bodyLarge?.copyWith(
+                  style: textTheme.copyWith(
                     color: colors.textSecondary,
                   ),
                   child: content!,

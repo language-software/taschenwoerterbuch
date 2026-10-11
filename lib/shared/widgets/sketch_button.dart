@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:taschenwoerterbuch/core/theme/app_colors.dart';
+import 'package:taschenwoerterbuch/core/theme/app_typography.dart';
 import 'package:taschenwoerterbuch/shared/widgets/sketch_painter.dart';
 
 class SketchButton extends StatefulWidget {
@@ -46,7 +47,7 @@ class _SketchButtonState extends State<SketchButton> {
                   widthFactor: 1,
                   child: Text(
                     widget.label,
-                    style: Theme.of(context).textTheme.titleMedium,
+                    style: AppTypography.body,
                   ),
                 ),
               ),

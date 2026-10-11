@@ -2,8 +2,9 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:taschenwoerterbuch/l10n/generated/app_localizations.dart';
-import 'package:taschenwoerterbuch/shared/widgets/sketch_button.dart';
 import 'package:volume_controller/volume_controller.dart';
+
+import '../../../shared/widgets/sketch_text_button.dart';
 
 /// Speaker button that plays the related audio file.
 class SpeakerButton extends StatefulWidget {
@@ -71,7 +72,7 @@ class _SpeakerButtonState extends State<SpeakerButton> {
     return Semantics(
       button: true,
       label: l10n.playPronunciation,
-      child: SketchButton(label: l10n.listen, onPressed: _play),
+      child: SketchTextButton(label: l10n.listen, onPressed: _play),
     );
   }
 }
