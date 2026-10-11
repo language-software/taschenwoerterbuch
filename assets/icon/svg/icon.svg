@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="512"
+   height="512"
+   viewBox="0 0 512 512"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4 (e7c3feb1, 2024-10-09)"
+   sodipodi:docname="icon.svg"
+   inkscape:export-filename="../png/icon.png"
+   inkscape:export-xdpi="192"
+   inkscape:export-ydpi="192"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="px"
+     inkscape:zoom="1.2783206"
+     inkscape:cx="287.48656"
+     inkscape:cy="216.69055"
+     inkscape:window-width="2560"
+     inkscape:window-height="1381"
+     inkscape:window-x="0"
+     inkscape:window-y="31"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <inkscape:path-effect
+       effect="sketch"
+       id="path-effect12"
+       is_visible="true"
+       lpeversion="1"
+       nbiter_approxstrokes="3"
+       parallel_offset="5;1"
+       strokelength="100"
+       strokelength_rdm="0.3;1"
+       strokeoverlap="0.12571429"
+       strokeoverlap_rdm="0.3;1"
+       ends_tolerance="0.1;1"
+       tremble_size="5;1"
+       tremble_frequency="1"
+       nbtangents="2"
+       tgt_places_rdmness="1;1"
+       tgtlength="66.857143"
+       tgtlength_rdm="0.3;1"
+       tgtscale="10" />
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter1"
+       x="-0.14865491"
+       y="-0.63426094"
+       width="1.2973098"
+       height="2.2685219">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="31.713047"
+         id="feGaussianBlur1" />
+    </filter>
+  </defs>
+  <rect
+     style="fill:#ffebc0;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:6;stroke-linecap:round;stroke-miterlimit:3.6;stroke-dasharray:none;stroke-opacity:1"
+     id="background"
+     width="512"
+     height="391.99997"
+     x="0"
+     y="0"
+     inkscape:label="background" />
+  <g
+     inkscape:label="base"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g20-4"
+       inkscape:label="flag-blur"
+       transform="matrix(1.2672742,0,0,1.3042341,-68.422186,-155.76786)"
+       style="mix-blend-mode:normal;stroke-width:0.777834;filter:url(#filter1);opacity:0.35">
+      <rect
+         style="fill:#0a1e46;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:10.5008;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.6;stroke-dasharray:none;stroke-opacity:1"
+         id="rect12-8"
+         width="170"
+         height="120"
+         x="0"
+         y="391.99997"
+         inkscape:label="flag-blue" />
+      <rect
+         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:10.5008;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.6;stroke-dasharray:none;stroke-opacity:1"
+         id="rect12-0-3"
+         width="170"
+         height="120"
+         x="170"
+         y="391.99997"
+         inkscape:label="flag-white" />
+      <rect
+         style="fill:#c81e28;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:10.5008;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.6;stroke-dasharray:none;stroke-opacity:1"
+         id="rect12-0-5-9"
+         width="172"
+         height="120"
+         x="340"
+         y="391.99997"
+         inkscape:label="flag-red" />
+    </g>
+    <g
+       id="g20"
+       inkscape:label="flag">
+      <rect
+         style="fill:#0a1e46;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:13.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.6;stroke-dasharray:none;stroke-opacity:1"
+         id="rect12"
+         width="170"
+         height="120"
+         x="0"
+         y="391.99997"
+         inkscape:label="flag-blue" />
+      <rect
+         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:13.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.6;stroke-dasharray:none;stroke-opacity:1"
+         id="rect12-0"
+         width="170"
+         height="120"
+         x="170"
+         y="391.99997"
+         inkscape:label="flag-white" />
+      <rect
+         style="fill:#c81e28;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:13.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.6;stroke-dasharray:none;stroke-opacity:1"
+         id="rect12-0-5"
+         width="172"
+         height="120"
+         x="340"
+         y="391.99997"
+         inkscape:label="flag-red" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:53.3333px;font-family:'Hiragino Mincho ProN';-inkscape-font-specification:'Hiragino Mincho ProN Light';text-align:center;letter-spacing:5.25px;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:#c81e28;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:13.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.6;stroke-dasharray:none;stroke-opacity:1"
+       id="text16"
+       inkscape:label="woerterbuch-label"
+       y="216.87997"
+       x="258.94501"><tspan
+         sodipodi:role="line"
+         x="258.94501"
+         y="216.87997"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:'Hiragino Mincho ProN';-inkscape-font-specification:'Hiragino Mincho ProN Semi-Bold'"
+         id="tspan19">Wörterbuch</tspan><tspan
+         sodipodi:role="line"
+         x="258.94501"
+         y="283.5466"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:'Hiragino Mincho ProN';-inkscape-font-specification:'Hiragino Mincho ProN Semi-Bold'"
+         id="tspan3" /></text>
+  </g>
+</svg>

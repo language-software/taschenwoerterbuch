@@ -34,6 +34,7 @@ dev_dependencies:
   remove_unused_localizations: ^1.1.2
   flutter_lints: ^6.0.0
   sqflite_common_ffi: ^2.4.3
+  icons_launcher: ^3.1.0
 
 # The following section is specific to Flutter packages.
 flutter:
@@ -46,3 +47,14 @@ flutter:
      - family: Gochi Hand
        fonts:
          - asset: assets/fonts/gochi-hand/GochiHand-Regular.ttf
+
+# Run the icon generator for dark and light mode png icon generation
+# with `make all` in /assets/icon.
+# Run `dart run icons_launcher:create` to generate the icons.
+icons_launcher:
+  image_path: "assets/icon/png/icon_light.png"
+  platforms:
+    ios:
+      enable: true
+      image_path: "assets/icon/png/icon_light.png"
+      dark_path: "assets/icon/png/icon_dark.png"
