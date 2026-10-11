@@ -1,5 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:taschenwoerterbuch/data/dictionary_providers.dart';
+import 'package:taschenwoerterbuch/data/fold.dart';
 import 'package:taschenwoerterbuch/data/models/entry.dart';
 import 'package:taschenwoerterbuch/data/models/lang_pair.dart';
 
@@ -80,3 +81,42 @@ final entryProvider = FutureProvider.family<Entry, EntryKey>((ref, key) async {
     ],
   );
 });
+
+/// Finds the counterpart entries of an entry's translations.
+///
+/// The translations of [EntryKey.pair] are headwords of the opposite
+/// direction, so they are looked up there by exact match. The result
+/// maps each translation that has at least one counterpart to the ids of the
+/// matching entries; translations without counterpart are absent.
+final translationTargetsProvider =
+    FutureProvider.family<Map<String, List<int>>, EntryKey>((ref, key) async {
+      final entry = await ref.watch(entryProvider(key).future);
+      final terms = {for (final s in entry.senses) ...s.translations};
+      if (terms.isEmpty) return {};
+
+      try {
+        final db = await ref.watch(
+          dictionaryDbProvider(key.pair.reversed).future,
+        );
+        final folded = {for (final t in terms) t: fold(t)};
+        final rows = await db.query(
+          'lookup',
+          columns: ['term_fold', 'entry_id'],
+          where: 'term_fold IN (${List.filled(folded.length, '?').join(',')})',
+          whereArgs: folded.values.toSet().toList(),
+          orderBy: 'kind, entry_id',
+        );
+        final idsByFold = <String, List<int>>{};
+        for (final r in rows) {
+          final ids = idsByFold.putIfAbsent(
+            r['term_fold']! as String,
+            () => [],
+          );
+          final id = r['entry_id']! as int;
+          if (!ids.contains(id)) ids.add(id);
+        }
+        return {for (final t in terms) t: ?idsByFold[folded[t]]};
+      } catch (_) {
+        return {};
+      }
+    });

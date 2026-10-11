@@ -26,9 +26,7 @@ class SketchTextButton extends StatelessWidget {
       child: GestureDetector(
         behavior: HitTestBehavior.opaque,
         onTap: onPressed,
-        child: ConstrainedBox(
-          constraints: const BoxConstraints(minHeight: 48),
-          child: Align(
+        child: Align(
             alignment: Alignment.centerLeft,
             widthFactor: 1,
             child: Text(
@@ -41,7 +39,6 @@ class SketchTextButton extends StatelessWidget {
             ),
           ),
         ),
-      ),
-    );
+      );
   }
 }

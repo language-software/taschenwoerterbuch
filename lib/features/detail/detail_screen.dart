@@ -82,7 +82,7 @@ class _EntrySection extends ConsumerWidget {
 /// Shows the lemma as a heading, followed by a meta line (part of speech,
 /// gender, plural, auxiliary verb), an optional IPA pronunciation with a
 /// [SpeakerButton], and the numbered senses with their definitions.
-class _EntryView extends StatelessWidget {
+class _EntryView extends ConsumerWidget {
   const _EntryView({required this.entry, required this.pair});
 
   /// The entry to display.
@@ -95,11 +95,19 @@ class _EntryView extends StatelessWidget {
   /// displayed unchanged.
   static const _genderLabels = {'masc': 'm', 'fem': 'f', 'neut': 'n'};
 
+  static Widget _plain(String text, AppColors colors) =>
+      Text(text, style: AppTypography.body.copyWith(color: colors.textPrimary));
+
   bool _conjugationAvailable() =>
       entry.pos == 'verb' && entry.template != null && pair == LangPair.frDe;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final targets =
+        ref
+            .watch(translationTargetsProvider((id: entry.id, pair: pair)))
+            .value ??
+        const <String, List<int>>{};
     final colors = context.colors;
     final l10n = AppLocalizations.of(context);
     final meta = <String>[
@@ -169,9 +177,28 @@ class _EntryView extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  '${i + 1}. ${s.translations.join('; ')}',
-                  style: AppTypography.body.copyWith(color: colors.textPrimary),
+                Wrap(
+                  crossAxisAlignment: WrapCrossAlignment.center,
+                  children: [
+                    for (final (j, t) in s.translations.indexed) ...[
+                      if (j == 0) _plain('${i + 1}. ', colors),
+                      if (targets[t] case final ids?)
+                        SketchTextButton(
+                          label: t,
+                          onPressed: () => Navigator.of(context).push(
+                            MaterialPageRoute<void>(
+                              builder: (_) => DetailScreen(
+                                entryIds: ids,
+                                pair: pair.reversed,
+                              ),
+                            ),
+                          ),
+                        )
+                      else
+                        _plain(t, colors),
+                      if (j < s.translations.length - 1) _plain('; ', colors),
+                    ],
+                  ],
                 ),
                 for (final d in s.definitions)
                   Text(
