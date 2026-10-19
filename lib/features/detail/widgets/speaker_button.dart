@@ -39,7 +39,7 @@ class _SpeakerButtonState extends State<SpeakerButton> {
       messenger.showSnackBar(SnackBar(content: Text(l10n.noInternet)));
       return false;
     }
-    if (! await _isMuted()) {
+    if (await _isMuted()) {
       messenger.showSnackBar(SnackBar(content: Text(l10n.volumeMuted)));
       return false;
     }
