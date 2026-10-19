@@ -84,6 +84,7 @@ class _ConjugationView extends StatelessWidget {
           TenseAccordion(
             title: tenseLabel(l10n, pane.mood, pane.tense),
             initiallyExpanded: i == 0,
+            dividerSeed: i + 1,
             child: ConjugationTable(pane: pane),
           ),
       ],
