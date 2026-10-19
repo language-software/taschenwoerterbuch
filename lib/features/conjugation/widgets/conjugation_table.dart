@@ -33,9 +33,7 @@ class ConjugationTable extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(vertical: 4),
                 child: Text(
                   row.forms.join(' / '),
-                  style: AppTypography.body.copyWith(
-                    color: colors.textPrimary,
-                  ),
+                  style: AppTypography.body.copyWith(color: colors.textPrimary),
                 ),
               ),
             ],
