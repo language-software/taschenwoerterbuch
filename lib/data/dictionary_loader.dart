@@ -1,9 +1,15 @@
 import 'dart:io';
 
-import 'package:flutter/services.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:taschenwoerterbuch/core/paths.dart';
 import 'package:taschenwoerterbuch/data/models/lang_pair.dart';
+
+class DictionaryMissingException implements Exception {
+  const DictionaryMissingException();
+
+  @override
+  String toString() => 'Dictionary not installed';
+}
 
 class DictionaryLoader {
   DictionaryLoader();
@@ -30,26 +36,11 @@ class DictionaryLoader {
   Future<Database> _load(LangPair pair) async {
     try {
       final path = await Paths.dictionaryFile(pair);
-      await _ensureCopied(Paths.dictionaryAsset(pair), path);
+      if (!await File(path).exists()) throw const DictionaryMissingException();
       return await openDatabase(path, readOnly: true, singleInstance: true);
     } catch (_) {
       _open.remove(pair);
       rethrow;
     }
-  }
-
-  Future<void> _ensureCopied(String asset, String target) async {
-    final data = await rootBundle.load(asset);
-    final file = File(target);
-    if (await file.exists() && await file.length() == data.lengthInBytes) {
-      return;
-    }
-    await file.parent.create(recursive: true);
-    final tmp = File('$target.tmp');
-    await tmp.writeAsBytes(
-      data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes),
-      flush: true,
-    );
-    await tmp.rename(target);
   }
 }

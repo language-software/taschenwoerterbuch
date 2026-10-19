@@ -54,5 +54,28 @@
   "tenseSubjunctiveImperfect": "Konjunktiv Imperfekt",
   "tenseImperative": "Imperativ",
   "tensePastParticiple": "Partizip Perfekt",
-  "tensePresentParticiple": "Partizip Präsens"
+  "tensePresentParticiple": "Partizip Präsens",
+  "dictionaryDownloadPrompt": "Lade die benötigten Wörterbücher herunter",
+  "dictionaryDownloadSize": "Größe des Downloads: {size} MB",
+  "@dictionaryDownloadSize": {
+    "placeholders": { "size": { "type": "String" } }
+  },
+  "dictionaryDownload": "Herunterladen",
+  "dictionaryChecking": "Prüfe Wörterbücher …",
+  "dictionaryUpdates": "Updates",
+  "dictionaryUpdateTitle": "Wörterbücher aktualisieren?",
+  "dictionaryUpdateBody": "Es ist eine neue Version der Wörterbücher verfügbar (Download: {size} MB).",
+  "@dictionaryUpdateBody": {
+    "placeholders": { "size": { "type": "String" } }
+  },
+  "dictionaryUpdateConfirm": "Aktualisieren",
+  "cancel": "Abbrechen",
+  "dictionaryDownloading": "Wörterbücher werden heruntergeladen …",
+  "dictionaryRetry": "Erneut versuchen",
+  "dictionaryErrorNetwork": "Der Download ist fehlgeschlagen. Prüfe deine Internetverbindung.",
+  "dictionaryErrorHash": "Die heruntergeladenen Daten sind beschädigt. Bitte versuche es erneut.",
+  "dictionaryErrorIncompatible": "Für diese Wörterbücher wird mindestens Version {version} der App benötigt. Bitte aktualisiere die App.",
+  "@dictionaryErrorIncompatible": {
+    "placeholders": { "version": { "type": "String" } }
+  }
 }

@@ -124,4 +124,55 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get tensePresentParticiple => 'Partizip Präsens';
+
+  @override
+  String get dictionaryDownloadPrompt =>
+      'Lade die benötigten Wörterbücher herunter';
+
+  @override
+  String dictionaryDownloadSize(String size) {
+    return 'Größe des Downloads: $size MB';
+  }
+
+  @override
+  String get dictionaryDownload => 'Herunterladen';
+
+  @override
+  String get dictionaryChecking => 'Prüfe Wörterbücher …';
+
+  @override
+  String get dictionaryUpdates => 'Updates';
+
+  @override
+  String get dictionaryUpdateTitle => 'Wörterbücher aktualisieren?';
+
+  @override
+  String dictionaryUpdateBody(String size) {
+    return 'Es ist eine neue Version der Wörterbücher verfügbar (Download: $size MB).';
+  }
+
+  @override
+  String get dictionaryUpdateConfirm => 'Aktualisieren';
+
+  @override
+  String get cancel => 'Abbrechen';
+
+  @override
+  String get dictionaryDownloading => 'Wörterbücher werden heruntergeladen …';
+
+  @override
+  String get dictionaryRetry => 'Erneut versuchen';
+
+  @override
+  String get dictionaryErrorNetwork =>
+      'Der Download ist fehlgeschlagen. Prüfe deine Internetverbindung.';
+
+  @override
+  String get dictionaryErrorHash =>
+      'Die heruntergeladenen Daten sind beschädigt. Bitte versuche es erneut.';
+
+  @override
+  String dictionaryErrorIncompatible(String version) {
+    return 'Für diese Wörterbücher wird mindestens Version $version der App benötigt. Bitte aktualisiere die App.';
+  }
 }

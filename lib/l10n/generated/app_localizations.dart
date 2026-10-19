@@ -297,6 +297,90 @@ abstract class AppLocalizations {
   /// In de, this message translates to:
   /// **'Partizip Präsens'**
   String get tensePresentParticiple;
+
+  /// No description provided for @dictionaryDownloadPrompt.
+  ///
+  /// In de, this message translates to:
+  /// **'Lade die benötigten Wörterbücher herunter'**
+  String get dictionaryDownloadPrompt;
+
+  /// No description provided for @dictionaryDownloadSize.
+  ///
+  /// In de, this message translates to:
+  /// **'Größe des Downloads: {size} MB'**
+  String dictionaryDownloadSize(String size);
+
+  /// No description provided for @dictionaryDownload.
+  ///
+  /// In de, this message translates to:
+  /// **'Herunterladen'**
+  String get dictionaryDownload;
+
+  /// No description provided for @dictionaryChecking.
+  ///
+  /// In de, this message translates to:
+  /// **'Prüfe Wörterbücher …'**
+  String get dictionaryChecking;
+
+  /// No description provided for @dictionaryUpdates.
+  ///
+  /// In de, this message translates to:
+  /// **'Updates'**
+  String get dictionaryUpdates;
+
+  /// No description provided for @dictionaryUpdateTitle.
+  ///
+  /// In de, this message translates to:
+  /// **'Wörterbücher aktualisieren?'**
+  String get dictionaryUpdateTitle;
+
+  /// No description provided for @dictionaryUpdateBody.
+  ///
+  /// In de, this message translates to:
+  /// **'Es ist eine neue Version der Wörterbücher verfügbar (Download: {size} MB).'**
+  String dictionaryUpdateBody(String size);
+
+  /// No description provided for @dictionaryUpdateConfirm.
+  ///
+  /// In de, this message translates to:
+  /// **'Aktualisieren'**
+  String get dictionaryUpdateConfirm;
+
+  /// No description provided for @cancel.
+  ///
+  /// In de, this message translates to:
+  /// **'Abbrechen'**
+  String get cancel;
+
+  /// No description provided for @dictionaryDownloading.
+  ///
+  /// In de, this message translates to:
+  /// **'Wörterbücher werden heruntergeladen …'**
+  String get dictionaryDownloading;
+
+  /// No description provided for @dictionaryRetry.
+  ///
+  /// In de, this message translates to:
+  /// **'Erneut versuchen'**
+  String get dictionaryRetry;
+
+  /// No description provided for @dictionaryErrorNetwork.
+  ///
+  /// In de, this message translates to:
+  /// **'Der Download ist fehlgeschlagen. Prüfe deine Internetverbindung.'**
+  String get dictionaryErrorNetwork;
+
+  /// No description provided for @dictionaryErrorHash.
+  ///
+  /// In de, this message translates to:
+  /// **'Die heruntergeladenen Daten sind beschädigt. Bitte versuche es erneut.'**
+  String get dictionaryErrorHash;
+
+  /// No description provided for @dictionaryErrorIncompatible.
+  ///
+  /// In de, this message translates to:
+  /// **'Für diese Wörterbücher wird mindestens Version {version} der App benötigt. Bitte aktualisiere die App.'**
+  String dictionaryErrorIncompatible(String version);
 }
 
 class _AppLocalizationsDelegate
